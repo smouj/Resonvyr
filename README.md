@@ -18,7 +18,7 @@
 **Voice intent transmutation into executable task chains.**
 
 ## Vision
-Resonvyr is a production-oriented skill in the **smouj SuperAgents Universe**. It is designed to solve a concrete operational problem with local-first execution, transparent reasoning traces, and practical safety controls. The architecture prioritizes free/open-source tooling, deterministic behavior, and modular integration with other autonomous skills.
+Resonvyr is a voice-to-task automation skill that transcribes spoken intent, extracts commands, and maps them to deterministic task execution. It is designed for hands-free workflows, fast command pipelines, and auditable action histories.
 
 ## Core Superpower
 - ⚡ **Low-latency voice command normalization to deterministic actions**
