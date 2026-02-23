@@ -1,8 +1,10 @@
-langchain
-langgraph
-llama-index
+faster-whisper
+mypy>=1.10
 pydantic
-python-dotenv
-pytest
-ruff
-mypy
+pydantic>=2.7
+pytest>=8.0
+python-dotenv>=1.0
+rapidfuzz
+ruff>=0.6
+typer
+webrtcvad
