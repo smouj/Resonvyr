@@ -7,7 +7,7 @@
 ![Language](https://img.shields.io/badge/language-Python%203.11%2B-blue)
 ![License](https://img.shields.io/github/license/smouj/Resonvyr)
 ![Last Commit](https://img.shields.io/github/last-commit/smouj/Resonvyr)
-![CI](https://img.shields.io/badge/CI-planned-lightgrey)
+![CI](https://img.shields.io/github/actions/workflow/status/smouj/Resonvyr/ci.yml?branch=main)
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-Support%20this%20project-ff5f5f?logo=ko-fi&logoColor=white)](https://ko-fi.com/smouj013_dev)
 
 <p align="center">
@@ -15,63 +15,44 @@
   <a href="./README.es.md"><img src="https://img.shields.io/badge/README-Español-c92a2a?style=for-the-badge" alt="Español"></a>
 </p>
 
-**Voice intent transmutation into executable task chains.**
+**Voice-to-task automation pipeline for local control.**
 
 ## Vision
-Resonvyr is a voice-to-task automation skill that transcribes spoken intent, extracts commands, and maps them to deterministic task execution. It is designed for hands-free workflows, fast command pipelines, and auditable action histories.
+Transforms speech intents into deterministic task events with local execution.
 
-## Core Superpower
-- ⚡ **Low-latency voice command normalization to deterministic actions**
+## What problem it solves
+Voice interfaces often require cloud dependencies and high latency.
 
-## Current Status (February 2026)
-- 🚧 Ideation and robust scaffolding phase
-- Next milestones:
-  - [ ] Finalize domain contracts and interfaces
-  - [ ] Ship a minimal runnable CLI command
-  - [ ] Add Ollama local model profile and fallback strategy
-  - [ ] Implement one complete end-to-end example
-  - [ ] Add quality gates (lint, typecheck, test)
-  - [ ] Publish architecture and operational runbook
+## Core superpower
+- ⚡ **Low-latency voice intent mapping to automation actions**
 
-## Planned Architecture (free/open-source stack)
-- **Primary language:** Python 3.11+
-- **Agent framework:** LangChain
-- **Local models:** Ollama (Llama 3.1, Qwen2.5, DeepSeek-Coder, Mistral)
-- **Core dependencies:** faster-whisper, webrtcvad, rapidfuzz, pydantic, typer
-- **Execution model:** local-first, optional self-hosted deployment
-
-## Capability Blueprint
-- ✅ Wake phrase routing
-- ✅ Intent extraction
-- ✅ Slot filling
-- ✅ Action confirmation
-- ✅ Command audit trail
+## Key use cases
+- ✅ Hands-free commands
+- ✅ Audio-driven workflows
+- ✅ Intent routing
+- ✅ Secure local control
 
 
-## Project Structure
-```text
-Resonvyr/
-├── src/resonvyr/
-│   ├── core/           # domain orchestration and policies
-│   ├── adapters/       # external integrations and tool bridges
-│   ├── memory/         # state, retrieval, and context strategies
-│   └── cli.py          # local operator command interface
-├── docs/
-│   ├── IMPLEMENTATION.md
-│   ├── ARCHITECTURE.md
-│   └── RUNBOOK.md
-├── examples/
-├── tests/
-├── requirements.txt
-└── README.md
-```
+## API surface
+`WS /voice`, `GET /health`
 
-## Quick Start
+## Technical stack
+- **Core stack:** FastAPI + local STT/TTS pipeline
+- **Runtime:** local-first, self-hosted friendly
+- **Infra:** Docker Compose + Caddy + Redis/Chroma/Ollama compatibility
+
+## Current status (Feb 2026)
+- ✅ Public scaffold available
+- ✅ Bilingual README (EN default + ES)
+- ✅ CI + release baseline configured
+- 🚧 Feature hardening in progress
+
+## Quick start
 ```bash
 git clone https://github.com/smouj/Resonvyr.git
 cd Resonvyr
 python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
+source .venv/bin/activate
 pip install -r requirements.txt
 python -m src.resonvyr.cli --help
 ```
@@ -83,10 +64,9 @@ python -m src.resonvyr.cli --help
 - [Deployment Guide](./docs/DEPLOYMENT.md)
 - [Release Process](./docs/RELEASE.md)
 - [Changelog](./CHANGELOG.md)
-- [Contributing](./CONTRIBUTING.md)
 
 ## Contributing
-Contributions are welcome. Please read **CONTRIBUTING.md** before opening issues or PRs.
+Contributions are welcome. Please read [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## License
 MIT © 2026 smouj

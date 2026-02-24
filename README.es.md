@@ -1,13 +1,13 @@
 # Resonvyr
 
 <p align="center">
-  <img src="./assets/branding/logo.svg" alt="Resonvyr logo" width="88" />
+  <img src="./assets/branding/logo.svg" alt="Logo de Resonvyr" width="88" />
 </p>
 
 ![Language](https://img.shields.io/badge/language-Python%203.11%2B-blue)
 ![License](https://img.shields.io/github/license/smouj/Resonvyr)
 ![Last Commit](https://img.shields.io/github/last-commit/smouj/Resonvyr)
-![CI](https://img.shields.io/badge/CI-planned-lightgrey)
+![CI](https://img.shields.io/github/actions/workflow/status/smouj/Resonvyr/ci.yml?branch=main)
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-Support%20this%20project-ff5f5f?logo=ko-fi&logoColor=white)](https://ko-fi.com/smouj013_dev)
 
 <p align="center">
@@ -15,63 +15,44 @@
   <a href="./README.es.md"><img src="https://img.shields.io/badge/README-Español-c92a2a?style=for-the-badge" alt="Español"></a>
 </p>
 
-**Voice intent transmutation into executable task chains.**
+**Voice-to-task automation pipeline for local control.**
 
 ## Visión
-Resonvyr es una skill de automatización voz-a-tarea que transcribe intención hablada, extrae comandos y los mapea a ejecución determinista. Está diseñada para flujos manos libres, pipelines rápidos de comandos e historial auditable de acciones.
+Transforms speech intents into deterministic task events with local execution.
+
+## Problema que resuelve
+Voice interfaces often require cloud dependencies and high latency.
 
 ## Superpoder principal
-- ⚡ **Low-latency voice command normalization to deterministic actions**
+- ⚡ **Low-latency voice intent mapping to automation actions**
 
-## Estado actual (Febrero 2026)
-- 🚧 Fase de ideación y scaffolding robusto
-- Próximos hitos:
-  - [ ] Finalizar contratos de dominio e interfaces
-  - [ ] Publicar un comando CLI mínimo ejecutable
-  - [ ] Añadir perfil de modelo local Ollama y estrategia de fallback
-  - [ ] Implementar un ejemplo completo end-to-end
-  - [ ] Añadir puertas de calidad (lint, typecheck, test)
-  - [ ] Publicar arquitectura y runbook operativo
-
-## Arquitectura planeada (stack gratuito/open-source)
-- **Lenguaje principal:** Python 3.11+
-- **Framework agente:** LangChain
-- **Modelos locales:** Ollama (Llama 3.1, Qwen2.5, DeepSeek-Coder, Mistral)
-- **Dependencias clave:** faster-whisper, webrtcvad, rapidfuzz, pydantic, typer
-- **Modelo de ejecución:** local-first, despliegue self-hosted opcional
-
-## Blueprint de capacidades
-- ✅ Wake phrase routing
-- ✅ Intent extraction
-- ✅ Slot filling
-- ✅ Action confirmation
-- ✅ Command audit trail
+## Casos de uso clave
+- ✅ Hands-free commands
+- ✅ Audio-driven workflows
+- ✅ Intent routing
+- ✅ Secure local control
 
 
-## Estructura del proyecto
-```text
-Resonvyr/
-├── src/resonvyr/
-│   ├── core/           # orquestación de dominio y políticas
-│   ├── adapters/       # integraciones externas y puentes de herramientas
-│   ├── memory/         # estado, recuperación y estrategias de contexto
-│   └── cli.py          # interfaz de comandos local para operación
-├── docs/
-│   ├── IMPLEMENTATION.md
-│   ├── ARCHITECTURE.md
-│   └── RUNBOOK.md
-├── examples/
-├── tests/
-├── requirements.txt
-└── README.md
-```
+## Superficie API
+`WS /voice`, `GET /health`
+
+## Stack técnico
+- **Stack base:** FastAPI + local STT/TTS pipeline
+- **Ejecución:** local-first, apto para self-hosting
+- **Infra:** compatibilidad con Docker Compose + Caddy + Redis/Chroma/Ollama
+
+## Estado actual (Feb 2026)
+- ✅ Scaffold público disponible
+- ✅ README bilingüe (EN por defecto + ES)
+- ✅ Base de CI + release configurada
+- 🚧 Endurecimiento de funcionalidades en progreso
 
 ## Inicio rápido
 ```bash
 git clone https://github.com/smouj/Resonvyr.git
 cd Resonvyr
 python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
+source .venv/bin/activate
 pip install -r requirements.txt
 python -m src.resonvyr.cli --help
 ```
@@ -83,10 +64,9 @@ python -m src.resonvyr.cli --help
 - [Guía de despliegue](./docs/DEPLOYMENT.md)
 - [Proceso de releases](./docs/RELEASE.md)
 - [Changelog](./CHANGELOG.md)
-- [Contribución](./CONTRIBUTING.md)
 
 ## Contribución
-Las contribuciones son bienvenidas. Lee **CONTRIBUTING.md** antes de abrir issues o PRs.
+Las contribuciones son bienvenidas. Lee [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Licencia
 MIT © 2026 smouj
